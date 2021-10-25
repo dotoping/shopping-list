@@ -5,12 +5,13 @@ const tasks = require('./routes/tasks');
 const connectDB = require('./db/connection');
 
 //middleware
+app.use(express.static('./public'));
 app.use(express.json());
 
 // routes
-app.get('/', (req, res) => {
-    res.send('Hello')
-});
+// app.get('/', (req, res) => {
+//     res.send('Hello')
+// });
 
 app.use('/api/v1/tasks', tasks);
 
